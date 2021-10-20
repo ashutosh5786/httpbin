@@ -28,10 +28,18 @@ pipeline {
         }
         }
 
+        // stage('Delete & Deploy'){
+        //     steps {
+        //         sh 'kubectl delete deploy demo'
+        //         sh 'kubectl apply -f demo.yaml'
+        //     }
+        // }
+
     }
     post {
         always {
             sh 'docker logout'
+            sh 'docker image rm ashutosh5786/demo'
         }
     }
 }
