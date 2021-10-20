@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Git Pull') {
             steps {
-                git 'https://github.com/postmanlabs/httpbin'
+                git 'https://github.com/ashutosh5786/httpbin'
             }
         }
         
