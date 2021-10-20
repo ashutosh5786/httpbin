@@ -39,7 +39,7 @@ pipeline {
     post {
         always {
             sh 'docker logout'
-            sh 'docker image rm ashutosh5786/demo'
+            sh 'docker image rm ashutosh5786/demo:${BUILD_NUMBER}'
         }
     }
 }
