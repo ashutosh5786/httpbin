@@ -31,7 +31,7 @@ pipeline {
         // stage('Delete & Deploy'){
         //     steps {
         //         sh 'kubectl delete deploy demo'
-        //         sh 'kubectl apply -f demo.yaml'
+        //          sh 'kubectl apply -f demo.yaml'
         //     }
         // }
 
