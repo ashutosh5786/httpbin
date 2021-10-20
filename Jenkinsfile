@@ -30,7 +30,7 @@ pipeline {
 
         stage('Deploy'){
             steps {
-                sh 'sed -i 's/v1/${BUILD_NUMBER}/g' jenkins-deploy.yaml'
+                sh "sed -i 's/v1/${BUILD_NUMBER}/g' jenkins-deploy.yaml"
                 sh 'kubectl apply -f jenkins-deploy.yaml'
                 sh 'kubectl apply -f jenkins-svc.yaml'
             }
