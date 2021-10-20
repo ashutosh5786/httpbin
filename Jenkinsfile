@@ -19,7 +19,7 @@ pipeline {
 
         stage('Login'){
         steps {
-            sh 'docker login -u $docker_USER -p $docker_PSW'
+            sh 'docker login -u $docker_USER -p $docker_PASSWORD'
             }
         }
         stage('Push'){
