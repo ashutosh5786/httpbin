@@ -28,12 +28,13 @@ pipeline {
         }
         }
 
-        // stage('Delete & Deploy'){
-        //     steps {
-        //         sh 'kubectl delete deploy demo'
-        //          sh 'kubectl apply -f demo.yaml'
-        //     }
-        // }
+        stage('Deploy'){
+            steps {
+                sh 'sed -i 's/v1/${BUILD_NUMBER}/g' jenkins-deploy.yaml'
+                sh 'kubectl apply -f jenkins-deploy.yaml'
+                sh 'kubectl apply -f jenkins-svc.yaml'
+            }
+        }
 
     }
     post {
