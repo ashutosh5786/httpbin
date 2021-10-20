@@ -1,5 +1,3 @@
-172.31.9.102
-
 pipeline {
     agent any
 
