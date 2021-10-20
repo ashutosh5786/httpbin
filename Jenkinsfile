@@ -19,9 +19,9 @@ pipeline {
 
         stage('Login'){
         steps {
-            sh 'echo $docker_PSW'
-            sh 'echo $docker_USER'
-            sh 'echod $docker_USR'
+            sh 'echo $docker_PSW > 1.txt | cat 1.txt'
+            sh 'echo $docker_USER > 2.txt | cat 2.txt'
+            sh 'echo $docker_USR > 3.txt | cat 3.txt'
             }
         }
         stage('Push'){
