@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Push'){
         steps {
-            sh 'docker push ashutosh5786/demo'
+            sh 'docker push ashutosh5786/demo:${BUILD_NUMBER}'
         }
         }
 
