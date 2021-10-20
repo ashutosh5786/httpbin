@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        docker = credentials('docker')
+        docker = credentials('pass')
     }
     stages {
         stage('Git Pull') {
@@ -19,9 +19,7 @@ pipeline {
 
         stage('Login'){
         steps {
-            sh 'echo $docker_PSW > 1.txt | cat 1.txt'
-            sh 'echo $docker_USER > 2.txt | cat 2.txt'
-            sh 'echo $docker_USR > 3.txt | cat 3.txt'
+            sh 'echo $docker | docker login -u ashutosh5786 --password-stdin'
             }
         }
         stage('Push'){
