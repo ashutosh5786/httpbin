@@ -13,7 +13,7 @@ pipeline {
         
         stage('Docker Build'){
             steps {
-               sh "docker build -t ashutosh5786/demo ./"
+               sh "docker build -t ashutosh5786/demo:${BUILD_NUMBER} ./"
             }
         }
 
