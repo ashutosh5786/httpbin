@@ -17,11 +17,11 @@ pipeline {
             }
         }
 
-        // stage('Login'){
-        // steps {
-        //     sh '$docker_PSW | docker login -u $docker_USR --password-stdin'
-        //     }
-        // }
+        stage('Login'){
+        steps {
+            sh '$docker_PSW | docker login -u $docker_USR --password-stdin'
+            }
+        }
         stage('Push'){
         steps {
             sh 'docker push ashutosh5786/demo'
