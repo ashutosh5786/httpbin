@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('docker')
+        docker = credentials('docker')
     }
     stages {
         stage('Git Pull') {
@@ -17,11 +17,11 @@ pipeline {
             }
         }
 
-        stage('Login'){
-        steps {
-            sh '$DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-            }
-        }
+        // stage('Login'){
+        // steps {
+        //     sh '$docker_PSW | docker login -u $docker_USR --password-stdin'
+        //     }
+        // }
         stage('Push'){
         steps {
             sh 'docker push ashutosh5786/demo'
