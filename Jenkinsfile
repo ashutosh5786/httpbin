@@ -1,3 +1,5 @@
+172.31.9.102
+
 pipeline {
     agent any
 
@@ -12,10 +14,10 @@ pipeline {
             steps {
                sh "docker build -t ashutosh5786/demo"
             }
+        }
             
             steps {
                sh "docker push ashutosh5786/demo"
             }
-        }
     }
 }
